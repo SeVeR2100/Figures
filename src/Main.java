@@ -1,35 +1,34 @@
 import Figures.Figures;
 import Figures.Objects.*;
-import Stack.StackList;
-
-
+import Stack.MyStack;
 
 public class Main {
     public static void main(String[] args)  {
-        StackList <Figures> stackList = new StackList();
+        MyStack<Figures> myStack = new MyStack<Figures>();
         Triangle triangle1 = new Triangle(40, 32, 34, 10);
-        stackList.push(triangle1);
+        myStack.push(triangle1);
         Rectangle rectangle1 = new Rectangle(23,43);
-        stackList.push(rectangle1);
+        myStack.push(rectangle1);
         Circle circle1 = new Circle(22);
-        stackList.push(circle1);
+        myStack.push(circle1);
         Parallelogram parallelogram1 = new Parallelogram(5,12,7);
-        stackList.push(parallelogram1);
+        myStack.push(parallelogram1);
         Sphere sphere1 = new Sphere(19);
-        stackList.push(sphere1);
+        myStack.push(sphere1);
         Cube cube1 = new Cube(6);
-        stackList.push(cube1);
+        myStack.push(cube1);
         RectangularBox rectangularBox = new RectangularBox(12,5,30);
-        stackList.push(rectangularBox);
-        int l = stackList.lenght();
+        myStack.push(rectangularBox);
 
-        for (int i = 0; i < l; i++){
-            stackList.pop().getAll();
+        int lenght = myStack.lenght();
+        int l = lenght;
+        System.out.println(lenght + " Objects in stack");
+        for (int i = 0; i < lenght; i++){
+            myStack.pop().getAll();
+            int newLenght = --l;
+            System.out.println(newLenght + " Objects in stack");
         }
-
-//        for(Figures f : stackList ){
-//            stackList.pop().getAll();
-//      }
+        System.out.println("Stack is empty : " + myStack.isEmpty() );
 
     }
 }
